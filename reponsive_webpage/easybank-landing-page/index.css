@@ -118,9 +118,12 @@ li {
 }
 
 .intro {
-  background-image: url('./images/bg-intro-mobile.svg');
-  background-repeat: no-repeat;
+  /* border: 1px solid black; */
+}
+.intro-image {
+  background: url('./images/bg-intro-mobile.svg') no-repeat;
   background-size: cover;
+  /* border: 1px solid red; */
 }
 .intro img {
   width: 100%;
@@ -129,8 +132,8 @@ li {
 
 .intro {
   display: block;
-  background-image: url('./images/bg-intro-mobile.svg');
-  background-position: right 0rem top -3rem;
+  /* background-image: url('./images/bg-intro-mobile.svg');
+  background-position: right 0rem top -3rem; */
   background-size: contain;
   position: relative;
   z-index: 2;
@@ -245,7 +248,11 @@ li {
 }
 .footer li {
   margin: 1rem;
+  font-size: 15px;
   /* border: 1px solid white; */
+}
+.footer-menu li {
+  font-size: 8px;
 }
 .footer-left li:hover {
   color: var(--lime-green);
@@ -256,7 +263,7 @@ li {
   margin: 1rem 0rem;
 }
 .footer-right .nav-request-invite {
-  margin: 1rem;
+  margin: 2rem 1rem;
 }
 .footer-right span {
   font-size: 15px;
@@ -266,38 +273,47 @@ li {
 /* ----------------------------------------------------------- */
 @media screen and (min-width: 1001px) {
   .content-margin {
-    padding: 2rem 7rem;
+    padding: 6rem 7rem;
     position: relative;
 
     z-index: 3;
   }
   .hello {
-    margin-top: -5rem;
+    /* margin-top: -5rem; */
     position: relative;
     z-index: 1;
   }
 
   .intro {
     display: flex;
-    background-image: url('./images/bg-intro-desktop.svg');
-    background-position: right -8rem top -4rem;
-    background-size: contain;
+    /* background-size: 100%; */
     position: relative;
     z-index: 2;
     /* border: 1px solid black; */
+    max-height: 80vh;
+    overflow: visible;
+  }
+  .intro-image {
+    width: 50%;
+    /* border: 1px solid red; */
+    background: url('./images/bg-intro-desktop.svg') no-repeat -4rem -15rem;
+    overflow: visible;
   }
   .intro img {
-    width: 45%;
     position: relative;
-    bottom: 0rem;
-    left: 7%;
+    left: 15%;
+    margin-top: -7rem;
     z-index: 3;
+    /* border: 1px solid black; */
   }
   .intro-content {
     order: -1;
-    width: 60%;
-    text-align: start;
-    padding: 3rem 0rem 3rem 7rem;
+    width: 50%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10%;
     /* border: 1px solid red; */
   }
 
@@ -306,16 +322,19 @@ li {
     width: 70%;
     color: var(--dark-blue);
     font-weight: var(--font-weight);
-    padding: 1rem 0rem 0rem 0rem;
+    padding: 1rem 0rem;
     margin-top: 5%;
   }
   .intro-desc {
     font-size: var(--text-size);
-    width: 80%;
+    width: 90%;
   }
   .intro-request {
     justify-content: flex-start;
+    align-self: flex-start;
     margin: 0rem;
+    padding: 1rem 0rem;
+    
   }
 
   .content-heading,
@@ -334,7 +353,7 @@ li {
     /* border: 1px solid black; */
   }
   .content-desc {
-    width: 65%;
+    width: 60%;
   }
   .content-service {
     text-align: none;
@@ -348,6 +367,7 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 3rem 7rem;
   }
   .footer-left {
     display: flex;
@@ -365,10 +385,14 @@ li {
     font-size: var(--text-size);
     text-align: left;
   }
+  .footer-menu li {
+    font-size: 14px;
+  }
   .footer-menu ul {
     columns: 2;
     -webkit-columns: 2;
     -moz-columns: 2;
+    padding-top: 2rem;
   }
 }
 
@@ -378,32 +402,33 @@ li {
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
-    /* border: 1px solid black; */
   }
 
   .intro {
     display: flex;
-    background-image: url('./images/bg-intro-desktop.svg');
-    background-position: right -6rem top -3rem;
-    background-size: contain;
     position: relative;
     z-index: 2;
+  }
+  .intro-image {
+    background: url('./images/bg-intro-desktop.svg') no-repeat -4rem -15rem;
   }
   .intro-content {
     order: -1;
     text-align: center;
   }
+  .intro-image {
+    width: 45%;
+  }
 
   .intro img {
-    width: 50%;
     position: relative;
-    top: -5%;
+    top: 0rem;
     left: 8%;
     z-index: 3;
   }
   .intro-content {
     order: -1;
-    width: 50%;
+    width: 55%;
     text-align: start;
     padding: 5% 0% 3% 5%;
   }
