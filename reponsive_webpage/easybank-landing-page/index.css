@@ -272,7 +272,7 @@ li {
     z-index: 3;
   }
   .hello {
-    margin-top: -6rem;
+    margin-top: -5rem;
     position: relative;
     z-index: 1;
   }
@@ -280,10 +280,11 @@ li {
   .intro {
     display: flex;
     background-image: url('./images/bg-intro-desktop.svg');
-    background-position: right -5rem top -7.7rem;
+    background-position: right -8rem top -4rem;
     background-size: contain;
     position: relative;
     z-index: 2;
+    /* border: 1px solid black; */
   }
   .intro img {
     width: 45%;
@@ -297,18 +298,20 @@ li {
     width: 60%;
     text-align: start;
     padding: 3rem 0rem 3rem 7rem;
+    /* border: 1px solid red; */
   }
 
   .intro-heading {
-    font-size: 40px;
+    font-size: 2.5rem;
     width: 70%;
     color: var(--dark-blue);
     font-weight: var(--font-weight);
-    padding: 1rem 0rem;
+    padding: 1rem 0rem 0rem 0rem;
+    margin-top: 5%;
   }
   .intro-desc {
-    font-size: 14px;
-    width: 70%;
+    font-size: var(--text-size);
+    width: 80%;
   }
   .intro-request {
     justify-content: flex-start;
@@ -381,7 +384,7 @@ li {
   .intro {
     display: flex;
     background-image: url('./images/bg-intro-desktop.svg');
-    background-position: right -4rem top -3rem;
+    background-position: right -6rem top -3rem;
     background-size: contain;
     position: relative;
     z-index: 2;
@@ -406,14 +409,14 @@ li {
   }
 
   .intro-heading {
-    font-size: 37px;
+    font-size: 2rem;
     width: 80%;
     color: var(--dark-blue);
     font-weight: var(--font-weight);
     padding: 1rem 0rem;
   }
   .intro-desc {
-    font-size: 14px;
+    font-size: var(--text-size);
     width: 100%;
   }
   .intro-request {
