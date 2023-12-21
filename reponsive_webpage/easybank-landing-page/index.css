@@ -291,7 +291,7 @@ a {
   }
   .intro img {
     position: relative;
-    margin-top: -7rem;
+    margin-top: -10rem;
     transform: translate(6rem, 2%);
     z-index: 3;
   }
@@ -306,8 +306,8 @@ a {
   }
 
   .intro-heading {
-    font-size: 3.2rem;
-    width: 90%;
+    font-size: 3.1rem;
+    width: 80%;
     color: var(--dark-blue);
     font-weight: var(--light-font-weight);
     padding: 1rem 0rem;
@@ -455,6 +455,9 @@ a {
 }
 
 @media screen and (max-width: 882px) {
+  .container {
+    padding: 0rem 2rem;
+  }
   .navbar {
     min-height: 9vh;
   }
