@@ -33,6 +33,11 @@ li {
   list-style-type: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   padding: 0rem 5em;
 }
@@ -78,10 +83,7 @@ li {
   padding: 1.5rem 1rem;
   font-weight: var(--light-font-weight);
 }
-.nav-menu a {
-  text-decoration: none;
-  color: inherit;
-}
+
 .nav-menu li:hover {
   border: 10px solid;
   border-width: 3px;
@@ -242,7 +244,8 @@ li {
   font-size: 15px;
 }
 .footer-menu li {
-  font-size: 8px;
+  font-size: 14px;
+  color: var(--grayish-blue);
 }
 .footer-left li:hover {
   color: var(--lime-green);
