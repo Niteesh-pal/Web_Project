@@ -202,6 +202,9 @@ header {
 .card-content span {
   font-weight: var(--bold-font-weight);
 }
+.region {
+  font-weight: var(--lighter-font-weight) !important;
+}
 
 @media screen and (min-width: 1121px) {
   .container {

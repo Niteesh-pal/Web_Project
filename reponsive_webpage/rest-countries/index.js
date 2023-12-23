@@ -30,7 +30,9 @@ function cards(data) {
     let cardDescLisst = document.createElement('ul');
     cardDescLisst.innerHTML = `<li><h2>${data[i].name.common}</h2></li>
       <li><span>Population: </span>${data[i].population.toLocaleString()}</li>
-      <li><span>Region: </span><p>${data[i].region}</p></li>
+      <li><span>Region: </span><span class="region">${
+        data[i].region
+      }</span></li>
       <li><span>Capital: </span>${data[i].capital}</li>`;
     cardContent.appendChild(cardDescLisst);
 
@@ -70,7 +72,7 @@ function filterByRegion(region) {
   node.forEach((ele) => {
     ele.style.display = 'block';
     const cardContent = ele.querySelector(
-      '.card-content ul li:nth-child(3) p'
+      '.card-content ul li:nth-child(3) .region'
     ).innerHTML;
 
     if (region != cardContent) {
