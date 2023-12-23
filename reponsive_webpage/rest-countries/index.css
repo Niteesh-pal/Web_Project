@@ -27,6 +27,7 @@
   padding: 0px;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-size: var(--homepage-text-size);
   font-family: var(--font-family-style);
   font-weight: var(--lighter-font-weight);
 }
