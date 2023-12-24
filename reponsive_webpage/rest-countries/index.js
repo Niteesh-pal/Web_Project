@@ -4,9 +4,12 @@ const filterText = filter.querySelector('.filter-text');
 const filterOption = filter.querySelector('#filter-option');
 const seachInput = document.querySelector('#search-input');
 const darkMode = document.querySelector('#dark-mode');
+
 let region = [];
 
 function cards(data) {
+  window.localStorage.setItem('apiData', JSON.stringify(data));
+
   for (let i = 0; i < data.length; i++) {
     // card div
     let createDiv = document.createElement('div');
@@ -35,6 +38,11 @@ function cards(data) {
       }</span></li>
       <li><span>Capital: </span>${data[i].capital}</li>`;
     cardContent.appendChild(cardDescLisst);
+
+    createDiv.addEventListener('click', (e) => {
+      window.localStorage.setItem('latlang', JSON.stringify(data[i].latlng));
+      window.location.href = 'detail.html';
+    });
 
     cardsContainer.appendChild(createDiv);
 
@@ -83,9 +91,7 @@ function filterByRegion(region) {
 
 async function fetchData() {
   try {
-    let data = await fetch(
-      'https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital'
-    );
+    let data = await fetch('https://restcountries.com/v3.1/all');
     data = await data.json();
     cards(data);
   } catch (err) {
@@ -103,7 +109,7 @@ seachInput.addEventListener('keyup', () => {
   let input = seachInput.value.toUpperCase();
 
   const node = cardsContainer.childNodes;
-
+  console.log(node.length);
   node.forEach((ele) => {
     let cardContent = ele.querySelector(
       '.card-content ul li:nth-child(1) h2'
@@ -121,4 +127,12 @@ seachInput.addEventListener('keyup', () => {
 
 darkMode.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
+});
+
+const nodes = cardsContainer.childNodes;
+nodes.forEach((card) => {
+  // console.log(card);
+  card.addEventListener('click', (e) => {
+    console.log(card);
+  });
 });

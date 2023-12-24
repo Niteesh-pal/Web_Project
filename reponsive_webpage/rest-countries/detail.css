@@ -1,0 +1,136 @@
+:root {
+  --dark-Blue: hsl(209, 23%, 22%);
+  --darker-Dark-Blue: hsl(207, 26%, 17%);
+  --darkest-Dark-Blue: hsl(200, 15%, 8%);
+  --dark-Gray: hsl(0, 0%, 52%);
+  --very-Light-Gray: hsl(0, 0%, 98%);
+  --White: hsl(0, 0%, 100%);
+
+  --homepage-text-size: 14px;
+  --detailpage-text-size: 16px;
+
+  --font-family-style: 'Nunito Sans', sans-serif;
+  --lighter-font-weight: 300;
+  --bold-font-weight: 600;
+  --bolder-font-weight: 800;
+
+  --padding: 0.5rem 1rem;
+  --filter-width: 13rem;
+
+  --primary-color: var(--very-Light-Gray);
+  --secondary-color: var(--dark-Gray);
+  --third-color: var(--White);
+}
+
+.dark-mode {
+  --primary-color: var(--darker-Dark-Blue);
+  --secondary-color: var(--White);
+  --third-color: var(--dark-Blue);
+  color: var(--White);
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-size: var(--detailpage-text-size);
+  font-family: var(--font-family-style);
+  font-weight: var(--bold-font-weight);
+}
+body {
+  background-color: var(--primary-color);
+}
+
+li {
+  list-style-type: none;
+  font-weight: var(--lighter-font-weight);
+  padding: 0.5rem 0rem;
+}
+li,
+li span {
+  font-size: var(--detailpage-text-size) !important;
+}
+
+.container {
+  /* border: 1px solid black; */
+  margin: 0rem 1rem;
+  padding: 2rem 0rem;
+}
+
+.navbar {
+  /* border: 1px solid red; */
+  background-color: var(--third-color);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 19px;
+  font-weight: var(--bolder-font-weight);
+}
+
+.back {
+  background-color: var(--third-color);
+  width: fit-content;
+  padding: 0.5rem 2rem;
+  border-radius: 0.2rem;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+/* .flag-image-container {
+  aspect-ratio: 3/2.1;
+} */
+#flag-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: fill;
+}
+
+#country-name {
+  font-size: 1.5rem;
+  font-weight: var(--bolder-font-weight);
+}
+
+.flag-gap {
+  padding: 1rem 0rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .logo h1 {
+    font-size: 20px;
+  }
+  .container {
+    /* border: 1px solid black; */
+    margin: 0rem 6rem;
+    padding: 2rem 0rem;
+  }
+
+  .flag-detail-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+  }
+  .country-detail-container {
+    margin-top: 2rem;
+  }
+  .flag-image-container {
+    max-width: 90%;
+    max-height: 80%;
+  }
+  .country-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    /* border: 1px solid green; */
+  }
+
+  .country-deltail1 {
+    /* box-decoration-break: 1px solid black; */
+  }
+}
