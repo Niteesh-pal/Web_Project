@@ -66,6 +66,7 @@ header {
   font-family: var(--font-family-style);
 }
 .logo {
+  font-size: 20px;
   font-weight: var(--bolder-font-weight);
 }
 .navbar ul {
@@ -79,6 +80,10 @@ header {
 }
 .navbar ul li h3 {
   font-weight: var(--bold-font-weight);
+}
+
+#dark-mode:hover {
+  cursor: pointer;
 }
 
 .main {
@@ -185,6 +190,7 @@ header {
 .card-image {
   border-radius: 0.5rem 0.5rem 0rem 0rem;
   width: 100%;
+
   object-fit: fill;
 }
 
@@ -211,6 +217,9 @@ header {
 }
 
 @media screen and (min-width: 1121px) {
+  .logo {
+    font-size: 20px;
+  }
   .container {
     width: 100%;
     padding: 2rem 4rem !important;
@@ -226,7 +235,8 @@ header {
   }
   .card-image {
     width: 100%;
-    height: 22vh;
+    /* height: 22vh; */
+    aspect-ratio: 2/1;
     object-fit: fill;
   }
 
@@ -244,7 +254,7 @@ header {
   #cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 1.5rem;
     padding: 0rem;
   }
   .card {
@@ -252,7 +262,8 @@ header {
   }
   .card-image {
     width: 100%;
-    height: 22vh;
+    /* height: 22vh; */
+    aspect-ratio: 2/1;
     object-fit: fill;
   }
 
@@ -279,7 +290,8 @@ header {
   }
   .card-image {
     width: 100%;
-    height: 22vh;
+    /* height: 22vh; */
+    aspect-ratio: 2/1;
     object-fit: fill;
   }
 
