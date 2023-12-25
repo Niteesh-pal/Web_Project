@@ -27,6 +27,7 @@
   padding: 0px;
   box-sizing: border-box;
   overflow-x: hidden;
+  user-select: none;
   font-size: var(--homepage-text-size);
   font-family: var(--font-family-style);
   font-weight: var(--lighter-font-weight);
@@ -66,15 +67,17 @@ header {
   font-family: var(--font-family-style);
 }
 .logo {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: var(--bolder-font-weight);
 }
 .navbar ul {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
 }
 .navbar ul li {
-  padding: 0.5rem;
+  margin-left: 0.2rem;
   font-size: var(--homepage-text-size);
   font-weight: var(--bold-font-weight);
 }
@@ -157,7 +160,7 @@ header {
   width: var(--filter-width);
 }
 #filter-option li {
-  padding: 0.3rem 0rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 0.5rem;
 }
 
@@ -218,7 +221,7 @@ header {
 
 @media screen and (min-width: 1121px) {
   .logo {
-    font-size: 25px;
+    font-size: 22px;
   }
   .container {
     width: 100%;
@@ -251,6 +254,9 @@ header {
     width: 100%;
     padding: 2rem !important;
   }
+  .logo {
+    font-size: 21.5px;
+  }
   #cards-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -278,6 +284,9 @@ header {
   .container {
     width: 100%;
     padding: 1rem !important;
+  }
+  .logo {
+    font-size: 20px;
   }
   #cards-container {
     display: grid;

@@ -4,12 +4,16 @@ const countryName = document.getElementById('country-name');
 const countryDetail1 = document.querySelector('.country-deltail1 ul');
 const countryDetail2 = document.querySelector('.country-detail2 ul');
 const countryBorder = document.querySelector('.border-country ul');
+const back = document.querySelector('.back');
 
+back.addEventListener('click', () => {
+  window.location.href = 'index.html';
+});
 darkMode.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
 });
 
-async function fetechApiData() {
+async function fetchApiData() {
   try {
     const apiData = await JSON.parse(window.localStorage.getItem('apiData'));
     const latLang = await JSON.parse(window.localStorage.getItem('latlang'));
@@ -26,10 +30,10 @@ function getCountryDetail(apiData, latLang) {
   });
   console.log(result[0]);
 
-  displayCountryData(result[0]);
+  displayCountryData(result[0], apiData);
 }
 
-function displayCountryData(result) {
+function displayCountryData(result, data) {
   flagImage.setAttribute('src', `${result.flags.png}`);
   countryName.textContent = `${result.name.common}`;
 
@@ -44,18 +48,41 @@ function displayCountryData(result) {
 
   countryDetail2.innerHTML = `<li><span>Top Level Domain:</span>
   ${result.tld}</li>
-                              <li><span>Currencies:</span> ${Object.values(
+                              <li><span>Currencies:</span> ${getCurrency(
                                 result.currencies
                               )}</li>
                               <li><span>Languages:</span>${Object.values(
                                 result.languages
                               )}</li>`;
 
-  countryBorder.innerHTML = `${result.borders}`;
+  countryBorder.innerHTML = `${getBorder(result.borders, data)}`;
 
   localStorage.removeItem('latLang');
 }
 
-console.log(countryDetail1.innerHTML);
+function getCurrency(currObj) {
+  for (const ele in currObj) {
+    return currObj[ele].name;
+  }
+  return '';
+}
 
-fetechApiData();
+function getBorder(codeBorder, data) {
+  if (codeBorder === undefined) {
+    return '';
+  }
+  let boderName = [];
+  for (let i = 0; i < codeBorder.length; i++) {
+    const name = data.reduce((border, curr) => {
+      if (curr.cca3 === codeBorder[i]) {
+        border.push(curr.name.common);
+      }
+
+      return border;
+    }, []);
+    boderName.push(name);
+  }
+  return boderName;
+}
+
+fetchApiData();
